@@ -1,35 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zag Website</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sustainable Construction Solutions</title>
     <style>
         body {
-            font-family: Montserrat, sans-serif;
-            margin: 0;
+            font-family: Arial, sans-serif;
+            margin: 0; 
             padding: 0;
+            background-color: #f0f8f5;
+            color: #2d3a36;
             text-align: center;
-            background-color: #f5f5f5;
         }
         header img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
-            display: block;
+            max-height: 300px;
+            object-fit: cover;
         }
         main {
+            padding: 40px 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #1a5a2a;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: left;
+            background-color: #ffffff;
             padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 8px 10px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+            font-size: 1rem;
+        }
+        textarea {
+            min-height: 100px;
+        }
+        button {
+            margin-top: 20px;
+            background-color: #1a5a2a;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #14411f;
+        }
+        footer {
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: #555;
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="zag website header.jpg" alt="Zag Website Header">
+        <img src="zag website header.jpg" alt="Zag Website Header" />
     </header>
     <main>
-        <h1>ZAN ASILI GROUP</h1>
-        <p>sustainable construction and efficient solutions.</p>
+        <h1>Coming Soon</h1>
+        <p>We’re working hard to bring you sustainable and self-efficient construction solutions.</p>
+
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="_replyto" required />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
     </main>
+    <footer>
+        &copy; 2025 Sustainable Construction Solutions
+    </footer>
 </body>
 </html>
-
