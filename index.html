@@ -1,108 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sustainable Construction Solutions</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sustainable & Self-Efficient Construction</title>
   <style>
+    /* Global Styles */
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      margin: 0; 
-      padding: 0;
-      background-color: #f0f8f5;
-      color: #2d3a36;
+      background-color: #e8e3db;
+      color: #3b3a36;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: url('ourwebsite/zagwebsiteheader.jpg') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
       text-align: center;
     }
-    header img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      max-height: 400px; /* Adjust as needed */
+
+    header h1 {
+      font-size: 3rem;
+      background-color: rgba(59, 58, 54, 0.7);
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    nav {
+      background-color: #3b3a36;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0;
+    }
+
+    nav ul li a {
       display: block;
-      margin: 0 auto;
+      padding: 15px 20px;
+      color: #f0e8d8;
+      text-decoration: none;
+      transition: background 0.3s;
     }
-    main {
-      padding: 40px 20px;
+
+    nav ul li a:hover {
+      background-color: #65745f;
     }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 30px;
-      color: #1a5a2a;
+
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
     }
-    form {
-      max-width: 400px;
-      margin: 0 auto;
-      text-align: left;
-      background-color: #ffffff;
-      padding: 20px;
+
+    .about, .projects, .contact {
+      background-color: #f0e8d8;
+      margin-bottom: 20px;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 40px;
     }
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
     }
-    input[type="text"],
-    input[type="email"],
-    textarea {
+
+    .projects-grid img {
       width: 100%;
-      padding: 8px 10px;
-      margin-top: 6px;
+      border-radius: 5px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    form input, form textarea, form button {
+      margin-bottom: 15px;
+      padding: 10px;
       border: 1px solid #ccc;
-      border-radius: 4px;
-      resize: vertical;
-      font-size: 1rem;
+      border-radius: 5px;
     }
-    textarea {
-      min-height: 100px;
-    }
-    button {
-      margin-top: 20px;
-      background-color: #1a5a2a;
+
+    form button {
+      background-color: #65745f;
       color: white;
       border: none;
-      padding: 12px 20px;
-      font-size: 1rem;
       cursor: pointer;
-      border-radius: 4px;
-      width: 100%;
-      transition: background-color 0.3s ease;
+      transition: background 0.3s;
     }
-    button:hover {
-      background-color: #14411f;
-    }
-    footer {
-      margin-top: 50px;
-      font-size: 0.9rem;
-      color: #555;
+
+    form button:hover {
+      background-color: #3b3a36;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="ourwebsite/zagwebsiteheader.jpg" alt="Zag Website Header" />
+
+  <header id="home">
+    <h1>Sustainable & Self-Efficient Construction Solutions</h1>
   </header>
-  <main>
-    <h1>Coming Soon</h1>
-    <p>We are working on sustainable and self-efficient construction solutions.</p>
 
-    <form action="mailto:qjenbusiness@gmail.com" method="POST" enctype="text/plain">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required />
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required />
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>We provide innovative, sustainable, and self-efficient construction solutions that minimize environmental impact while maximizing efficiency and comfort. Our team of experts designs and builds spaces that are not only aesthetically pleasing but also ecologically responsible.</p>
+  </section>
 
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
+  <section id="projects" class="projects">
+    <h2>Our Projects</h2>
+    <div class="projects-grid">
+      <img src="https://via.placeholder.com/400x300" alt="Project 1">
+      <img src="https://via.placeholder.com/400x300" alt="Project 2">
+      <img src="https://via.placeholder.com/400x300" alt="Project 3">
+      <img src="https://via.placeholder.com/400x300" alt="Project 4">
+    </div>
+  </section>
 
-      <button type="submit">Send</button>
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form action="mailto:youremail@example.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
     </form>
-  </main>
-  <footer>
-    &copy; 2025 Sustainable Construction Solutions
-  </footer>
+  </section>
+
 </body>
 </html>
-
