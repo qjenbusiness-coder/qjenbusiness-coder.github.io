@@ -2,121 +2,163 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sustainable & Self-Efficient Construction</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Zag – Sustainable Construction</title>
   <style>
-    /* Global Styles */
-    body {
+    /* Custom Fonts */
+    @font-face {
+      font-family: 'Quincy CF'; src: local('Quincy CF'), url('QuincyCF.woff2') format('woff2');
+    }
+
+    body, input, textarea, button {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #e8e3db;
+      font-family: 'Microsoft Tai Le', sans-serif;
       color: #3b3a36;
-      scroll-behavior: smooth;
+      background-color: #e8e3db;
+      line-height: 1.6;
+    }
+    h1, h2, h3, .slide-title {
+      font-family: 'Quincy CF', serif;
+      color: #3b3a36;
     }
 
-    header {
-      background: url('ourwebsite/zagwebsiteheader.jpg') center/cover no-repeat;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      background-color: rgba(59, 58, 54, 0.7);
-      padding: 10px 20px;
-      border-radius: 5px;
-    }
-
+    /* Navigation Bar */
     nav {
-      background-color: #3b3a36;
+      background: #3b3a36;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
-
     nav ul {
       display: flex;
       list-style: none;
       margin: 0;
-      padding: 0;
+      padding: 10px 20px;
       justify-content: center;
     }
-
-    nav ul li {
-      margin: 0;
+    nav li {
+      margin: 0 15px;
     }
-
-    nav ul li a {
-      display: block;
-      padding: 15px 20px;
+    nav a {
       color: #f0e8d8;
       text-decoration: none;
-      transition: background 0.3s;
+      font-weight: bold;
+      padding: 8px 12px;
+      transition: background-color 0.3s;
     }
-
-    nav ul li a:hover {
+    nav a:hover {
       background-color: #65745f;
+      border-radius: 5px;
     }
 
+    /* Hero Slideshow */
+    .slideshow {
+      position: relative;
+      overflow: hidden;
+      height: 80vh;
+      min-height: 400px;
+    }
+    .slides {
+      display: flex;
+      width: 300%;
+      transition: transform 0.5s ease-in-out;
+    }
+    .slide {
+      min-width: 100%;
+      position: relative;
+      color: white;
+    }
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .slide-content {
+      position: absolute;
+      bottom: 20%;
+      left: 10%;
+      max-width: 400px;
+    }
+    .slide-title {
+      font-size: 2.5rem;
+    }
+    .slide-text {
+      font-size: 1.1rem;
+    }
+    .slide-nav {
+      position: absolute;
+      bottom: 10%;
+      right: 10%;
+      display: flex;
+      gap: 10px;
+    }
+    .slide-nav button {
+      background: #65745f;
+      border: none;
+      color: white;
+      padding: 8px 12px;
+      cursor: pointer;
+      opacity: 0.8;
+      font-family: 'Microsoft Tai Le';
+    }
+    .slide-nav button:hover {
+      opacity: 1;
+    }
+
+    /* Section Layouts */
     section {
       padding: 60px 20px;
-      max-width: 1200px;
+      max-width: 1100px;
       margin: auto;
     }
-
     .about, .projects, .contact {
       background-color: #f0e8d8;
-      margin-bottom: 20px;
       border-radius: 8px;
       padding: 40px;
+      margin-bottom: 40px;
     }
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
       gap: 20px;
     }
-
     .projects-grid img {
       width: 100%;
       border-radius: 5px;
     }
 
+    /* Contact Form */
     form {
       display: flex;
       flex-direction: column;
     }
-
     form input, form textarea, form button {
       margin-bottom: 15px;
-      padding: 10px;
+      padding: 12px;
       border: 1px solid #ccc;
       border-radius: 5px;
+      font-family: 'Microsoft Tai Le';
     }
-
     form button {
       background-color: #65745f;
       color: white;
       border: none;
       cursor: pointer;
-      transition: background 0.3s;
+      font-weight: bold;
     }
-
     form button:hover {
       background-color: #3b3a36;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .slide-title { font-size: 2rem; }
+      .slide-text { font-size: 1rem; }
     }
   </style>
 </head>
 <body>
-
-  <header id="home">
-    <h1>Sustainable & Self-Efficient Construction Solutions</h1>
-  </header>
 
   <nav>
     <ul>
@@ -127,30 +169,74 @@
     </ul>
   </nav>
 
+  <div class="slideshow" id="home">
+    <div class="slides">
+      <div class="slide">
+        <img src="ourwebsite/zagwebsiteheader.jpg" alt="Hero 1">
+        <div class="slide-content">
+          <h1 class="slide-title">Sustainable Design</h1>
+          <p class="slide-text">Innovating eco-conscious infrastructure.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="ourwebsite/zagwebsiteheader.jpg" alt="Hero 2">
+        <div class="slide-content">
+          <h1 class="slide-title">Self-Efficient Build</h1>
+          <p class="slide-text">Creating resilient communities.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="ourwebsite/zagwebsiteheader.jpg" alt="Hero 3">
+        <div class="slide-content">
+          <h1 class="slide-title">Regenerative Living</h1>
+          <p class="slide-text">Minimizing impact, maximizing harmony.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-nav">
+      <button id="prev">Prev</button>
+      <button id="next">Next</button>
+    </div>
+  </div>
+
   <section id="about" class="about">
     <h2>About Us</h2>
-    <p>We provide innovative, sustainable, and self-efficient construction solutions that minimize environmental impact while maximizing efficiency and comfort. Our team of experts designs and builds spaces that are not only aesthetically pleasing but also ecologically responsible.</p>
+    <p>We design and build sustainable, self-efficient communities using local materials, bioclimatic principles, and regenerative systems. Our focus is on harmony—between structure and nature, design and function.</p>
   </section>
 
   <section id="projects" class="projects">
-    <h2>Our Projects</h2>
+    <h2>Projects Showcase</h2>
     <div class="projects-grid">
-      <img src="https://via.placeholder.com/400x300" alt="Project 1">
-      <img src="https://via.placeholder.com/400x300" alt="Project 2">
-      <img src="https://via.placeholder.com/400x300" alt="Project 3">
-      <img src="https://via.placeholder.com/400x300" alt="Project 4">
+      <img src="https://via.placeholder.com/400x300?text=Project+1" alt="Project 1">
+      <img src="https://via.placeholder.com/400x300?text=Project+2" alt="Project 2">
+      <img src="https://via.placeholder.com/400x300?text=Project+3" alt="Project 3">
+      <img src="https://via.placeholder.com/400x300?text=Project+4" alt="Project 4">
     </div>
   </section>
 
   <section id="contact" class="contact">
     <h2>Contact Us</h2>
-    <form action="mailto:youremail@example.com" method="POST" enctype="text/plain">
+    <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
       <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="email" name="_replyto" placeholder="Your Email" required>
       <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
   </section>
 
+  <script>
+    const slides = document.querySelector('.slides');
+    const total = document.querySelectorAll('.slide').length;
+    let index = 0;
+    document.getElementById('next').onclick = () => {
+      index = (index + 1) % total;
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    };
+    document.getElementById('prev').onclick = () => {
+      index = (index - 1 + total) % total;
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    };
+  </script>
 </body>
 </html>
+
