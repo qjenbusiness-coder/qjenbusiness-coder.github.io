@@ -2,241 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Zag – Sustainable Construction</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zag – Coming Soon</title>
   <style>
-    /* Custom Fonts */
     @font-face {
-      font-family: 'Quincy CF'; src: local('Quincy CF'), url('QuincyCF.woff2') format('woff2');
+      font-family: 'Quincy CF'; 
+      src: local('Quincy CF'), url('QuincyCF.woff2') format('woff2');
     }
 
-    body, input, textarea, button {
+    body {
       margin: 0;
+      padding: 0;
       font-family: 'Microsoft Tai Le', sans-serif;
-      color: #3b3a36;
       background-color: #e8e3db;
-      line-height: 1.6;
-    }
-    h1, h2, h3, .slide-title {
-      font-family: 'Quincy CF', serif;
       color: #3b3a36;
-    }
-
-    /* Navigation Bar */
-    nav {
-      background: #3b3a36;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    nav ul {
-      display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 10px 20px;
-      justify-content: center;
-    }
-    nav li {
-      margin: 0 15px;
-    }
-    nav a {
-      color: #f0e8d8;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 8px 12px;
-      transition: background-color 0.3s;
-    }
-    nav a:hover {
-      background-color: #65745f;
-      border-radius: 5px;
-    }
-
-    /* Hero Slideshow */
-    .slideshow {
-      position: relative;
-      overflow: hidden;
-      height: 80vh;
-      min-height: 400px;
-    }
-    .slides {
-      display: flex;
-      width: 300%;
-      transition: transform 0.5s ease-in-out;
-    }
-    .slide {
-      min-width: 100%;
-      position: relative;
-      color: white;
-    }
-    .slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .slide-content {
-      position: absolute;
-      bottom: 20%;
-      left: 10%;
-      max-width: 400px;
-    }
-    .slide-title {
-      font-size: 2.5rem;
-    }
-    .slide-text {
-      font-size: 1.1rem;
-    }
-    .slide-nav {
-      position: absolute;
-      bottom: 10%;
-      right: 10%;
-      display: flex;
-      gap: 10px;
-    }
-    .slide-nav button {
-      background: #65745f;
-      border: none;
-      color: white;
-      padding: 8px 12px;
-      cursor: pointer;
-      opacity: 0.8;
-      font-family: 'Microsoft Tai Le';
-    }
-    .slide-nav button:hover {
-      opacity: 1;
-    }
-
-    /* Section Layouts */
-    section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    .about, .projects, .contact {
-      background-color: #f0e8d8;
-      border-radius: 8px;
-      padding: 40px;
-      margin-bottom: 40px;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-      gap: 20px;
-    }
-    .projects-grid img {
-      width: 100%;
-      border-radius: 5px;
-    }
-
-    /* Contact Form */
-    form {
+      height: 100vh;
       display: flex;
       flex-direction: column;
-    }
-    form input, form textarea, form button {
-      margin-bottom: 15px;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-family: 'Microsoft Tai Le';
-    }
-    form button {
-      background-color: #65745f;
-      color: white;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    form button:hover {
-      background-color: #3b3a36;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .slide-title { font-size: 2rem; }
-      .slide-text { font-size: 1rem; }
+    header {
+      width: 100%;
+      height: 300px;
+      background: url('ourwebsite/zagwebsiteheader.jpg') no-repeat center center/cover;
+      animation: fadeIn 2s ease-out forwards;
+    }
+
+    h1 {
+      font-family: 'Quincy CF', serif;
+      font-size: 3rem;
+      margin-top: 40px;
+      animation: slideUp 1.5s ease-out forwards;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      animation: slideUp 2s ease-out forwards;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <header></header>
+  <h1>We’re Building Something Great</h1>
+  <p>Our sustainable and self-efficient solutions are coming soon.</p>
 
-  <div class="slideshow" id="home">
-    <div class="slides">
-      <div class="slide">
-        <img src="ourwebsite/zagwebsiteheader.jpg" alt="Hero 1">
-        <div class="slide-content">
-          <h1 class="slide-title">Sustainable Design</h1>
-          <p class="slide-text">Innovating eco-conscious infrastructure.</p>
-        </div>
-      </div>
-      <div class="slide">
-        <img src="ourwebsite/zagwebsiteheader.jpg" alt="Hero 2">
-        <div class="slide-content">
-          <h1 class="slide-title">Self-Efficient Build</h1>
-          <p class="slide-text">Creating resilient communities.</p>
-        </div>
-      </div>
-      <div class="slide">
-        <img src="ourwebsite/zagwebsiteheader.jpg" alt="Hero 3">
-        <div class="slide-content">
-          <h1 class="slide-title">Regenerative Living</h1>
-          <p class="slide-text">Minimizing impact, maximizing harmony.</p>
-        </div>
-      </div>
-    </div>
-    <div class="slide-nav">
-      <button id="prev">Prev</button>
-      <button id="next">Next</button>
-    </div>
-  </div>
-
-  <section id="about" class="about">
-    <h2>About Us</h2>
-    <p>We design and build sustainable, self-efficient communities using local materials, bioclimatic principles, and regenerative systems. Our focus is on harmony—between structure and nature, design and function.</p>
-  </section>
-
-  <section id="projects" class="projects">
-    <h2>Projects Showcase</h2>
-    <div class="projects-grid">
-      <img src="https://via.placeholder.com/400x300?text=Project+1" alt="Project 1">
-      <img src="https://via.placeholder.com/400x300?text=Project+2" alt="Project 2">
-      <img src="https://via.placeholder.com/400x300?text=Project+3" alt="Project 3">
-      <img src="https://via.placeholder.com/400x300?text=Project+4" alt="Project 4">
-    </div>
-  </section>
-
-  <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="_replyto" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-
-  <script>
-    const slides = document.querySelector('.slides');
-    const total = document.querySelectorAll('.slide').length;
-    let index = 0;
-    document.getElementById('next').onclick = () => {
-      index = (index + 1) % total;
-      slides.style.transform = `translateX(-${index * 100}%)`;
-    };
-    document.getElementById('prev').onclick = () => {
-      index = (index - 1 + total) % total;
-      slides.style.transform = `translateX(-${index * 100}%)`;
-    };
-  </script>
 </body>
 </html>
-
