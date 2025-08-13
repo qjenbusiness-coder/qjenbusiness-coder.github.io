@@ -16,18 +16,18 @@
       font-family: 'Microsoft Tai Le', sans-serif;
       background-color: #e8e3db;
       color: #3b3a36;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
       text-align: center;
     }
 
     header {
       width: 100%;
-      height: 300px;
-      background: url('ourwebsite/zagwebsiteheader.jpg') no-repeat center center/cover;
+      height: auto;
+    }
+
+    header img {
+      width: 100%;
+      height: auto;
+      display: block;
       animation: fadeIn 2s ease-out forwards;
     }
 
@@ -44,6 +44,35 @@
       animation: slideUp 2s ease-out forwards;
     }
 
+    form {
+      margin-top: 30px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    input, textarea, button {
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #65745f;
+      border-radius: 5px;
+      font-family: 'Microsoft Tai Le', sans-serif;
+    }
+
+    button {
+      background-color: #65745f;
+      color: #f0e8d8;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #3b3a36;
+    }
+
     /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; }
@@ -57,9 +86,20 @@
 </head>
 <body>
 
-  <header></header>
+  <header>
+    <img src="ourwebsite/zagwebsiteheader.jpg" alt="Zag Website Header">
+  </header>
+
   <h1>We’re Building Something Great</h1>
   <p>Our sustainable and self-efficient solutions are coming soon.</p>
+
+  <!-- Contact Form -->
+  <form action="https://formspree.io/f/your-form-id" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="_replyto" placeholder="Your Email" required>
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
 
 </body>
 </html>
